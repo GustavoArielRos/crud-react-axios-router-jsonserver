@@ -7,6 +7,8 @@ function Home() {
     //state que vai armazenar os dados vindo a fake api(json)
     const [data, setData] = useState([])
 
+    
+
     //vai carregar nossos dados do "backend"(json)
     useEffect(() => {
         axios.get('http://localhost:5000/users')
@@ -14,6 +16,19 @@ function Home() {
         .catch(err => console.log(err));
     }, [])
 
+    //função de deletar
+    const handleDelete = (id) => {
+        //variável que vai ser aquele win
+        //se for ok, o confirm é true se for cancelar o confirm é false
+        const confirm = window.confirm("Você gostaria de deletar?")
+        if(confirm) {
+            axios.delete('http://localhost:5000/users/' + id)
+            .then(res => {
+                window.location.reload();//recarregando a página
+            })
+            .catch(err => console.log(err));
+        }
+    }
 
     return(
         <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
@@ -47,7 +62,8 @@ function Home() {
                                     <td>
                                         <Link to={`/read/${d.id}`} className='btn btn-sm btn-info me-2'>Read</Link>
                                         <Link to={`/update/${d.id}`}className='btn btn-sm btn-primary me-2'>Edit</Link>
-                                        <button className='btn btn-sm btn-danger'>Delete</button>
+                                        <button onClick={ e => handleDelete(d.id)} className='btn btn-sm btn-danger'>Delete</button>
+                                        {/*onClick é um evento que ocorre quando o botão onde ele está é clickado, no caso ele chama a função */}
                                     </td>
                                 </tr>
                             ))
