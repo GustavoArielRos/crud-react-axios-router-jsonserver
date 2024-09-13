@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org"
+    },
+    {
+      "id": "2",
+      "name": "Leanne Graham2",
+      "username": "Bret2",
+      "email": "Sincere@april.biz2",
+      "phone": "1-770-736-8032 x56442",
+      "website": "hildegard.org2"
+    },
+    {
+      "id": "3",
+      "name": "Leanne Graham3",
+      "username": "Bret3",
+      "email": "Sincere@april3.biz",
+      "phone": "1-770-736-8033 x56442",
+      "website": "hildegard.org3"
+    },
+    {
+      "id": "164d",
+      "name": "Gustavo",
+      "email": "Gustavo@gmail.com",
+      "phone": "3322"
+    }
+  ]
+}
